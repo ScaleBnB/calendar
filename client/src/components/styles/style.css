@@ -366,3 +366,18 @@ body {
   height: 3.4em;
   border-radius: 0.26em;
 }
+
+#not-charged {
+
+  color: #484848;
+  font-size: 0.70em;
+  font-family: 'MontrealRegular';
+  text-align: center;
+  padding-top: 1.1em;
+  border-bottom: solid #E4E4E4 1px;
+  padding-bottom: 2.1em;
+}
+
+/* #Layer_1 {
+  padding-top: 0.35em;
+} */

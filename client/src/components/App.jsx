@@ -8,6 +8,8 @@ import CheckInOut from './CheckInOut.jsx';
 import PricePerNight from './PricePerNight.jsx';
 import Guest from './Guest.jsx';
 import PriceInformation from './PriceInformation.jsx';
+import ExtraInfo from './ExtraInfo.jsx';
+import './styles/style.css'
 
 class App extends Component {
   constructor(props) {
@@ -52,7 +54,7 @@ class App extends Component {
 
   componentDidMount() {
 
-    axios.get('http://3.16.164.208:3001/month', {
+    axios.get('http://3.16.164.208:3001', {
       params: {
           "id": 1,
           "month": "02",
@@ -152,7 +154,7 @@ class App extends Component {
       updatedMonth = this.stringMonthZeroPad(_m);
     }
 
-    axios.get('http://3.16.164.208:3001/month', {
+    axios.get('http://3.16.164.208:3001', {
       params: {
           "id": 1,
           "month": updatedMonth,
@@ -533,6 +535,7 @@ class App extends Component {
       <Guest />
       <PriceInformation status={status}/>
       <div id='button-reserve'>Reserve</div>
+      <ExtraInfo />
     </div>
     );
   }

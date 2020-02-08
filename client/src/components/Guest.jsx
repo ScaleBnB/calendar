@@ -24,6 +24,7 @@ class Guest extends React.Component {
         let useSVG;
         let guestGrid = {};
         let guestText = {};
+        let svgStyle = {}
         if(!this.state.clicked) {
             guestText['paddingLeft'] = '0em';
             guestText['backgroundColor'] = 'white';
@@ -38,6 +39,7 @@ class Guest extends React.Component {
 
             guestGrid['height'] = '45.99px';
             useSVG = up;
+            svgStyle['paddingTop'] = '0.38em';
         }
 
 
@@ -52,7 +54,7 @@ class Guest extends React.Component {
                     onClick={this.clickHandler}
                     style={guestGrid}>
                         <div id="guest-1" style={guestText}>1 guest</div>
-                        <SVG className="svg-up-down" src={useSVG}/>
+                        <SVG style={svgStyle} className="svg-up-down" src={useSVG}/>
                         {/* <div className="border-bottom"></div>
                         <div className="border-bottom"></div> */}
                 </div>

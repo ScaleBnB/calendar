@@ -52,7 +52,7 @@ class App extends Component {
 
   componentDidMount() {
 
-    axios.get('http://localhost:3001/month', {
+    axios.get('http://3.16.164.208:3001/month', {
       params: {
           "id": 1,
           "month": "02",
@@ -152,7 +152,7 @@ class App extends Component {
       updatedMonth = this.stringMonthZeroPad(_m);
     }
 
-    axios.get('http://localhost:3001/month', {
+    axios.get('http://3.16.164.208:3001/month', {
       params: {
           "id": 1,
           "month": updatedMonth,

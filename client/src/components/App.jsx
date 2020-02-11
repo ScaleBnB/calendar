@@ -537,7 +537,7 @@ class App extends Component {
       <Guest />
       <PriceInformation status={status}/>
       <div id='button-reserve'>Reserve</div>
-      <ExtraInfo />
+      <ExtraInfo status={status}/>
     </div>
     );
   }

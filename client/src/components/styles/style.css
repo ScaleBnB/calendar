@@ -341,9 +341,14 @@ body {
 }
 
 .border-bottom {
-  border-bottom: #238186 solid 2px;
-  margin-bottom: -4px;
-  position: absolute;
+  border-bottom: #238186 solid 2.5px;
+  margin-top: -4.2px;
+  border-radius: 0.7em;
+  position: relative;
+  margin-right: 0.1em;
+  margin-left: 0.1em;
+  width: 19.8em;
+  border-radius: 2em;
 }
 
 /* ----------------------------------- */
@@ -378,6 +383,8 @@ body {
   padding-bottom: 2.1em;
 }
 
-/* #Layer_1 {
-  padding-top: 0.35em;
-} */
+.extraSVG {
+  margin-top: 1.55em;
+  height: 3.65em;
+  width: -webkit-fill-available;
+}

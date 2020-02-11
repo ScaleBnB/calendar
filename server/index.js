@@ -19,6 +19,12 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 // Start the server on the provided port
 app.listen(PORT, () => console.log('Listening on port: ' + PORT));
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 
 app.get('/month', (req, res) => {
     

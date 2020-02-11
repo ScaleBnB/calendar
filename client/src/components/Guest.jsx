@@ -42,6 +42,9 @@ class Guest extends React.Component {
             svgStyle['paddingTop'] = '0.38em';
         }
 
+        var showGreen = this.state.clicked ? 
+                <div className="border-bottom"></div> : null;
+
 
         return(
             <div id="guest-container">
@@ -58,7 +61,7 @@ class Guest extends React.Component {
                         {/* <div className="border-bottom"></div>
                         <div className="border-bottom"></div> */}
                 </div>
-                <div className="border-bottom"></div>
+                {showGreen}
 
             </div>
         );

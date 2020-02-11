@@ -97,6 +97,7 @@ class DateGridListItem extends React.Component {
         if(!this.props.avalibility){
             style['color'] = '#D8D8D8';
             style['textDecoration'] = 'line-through';
+            style['backgroundColor'] = 'white';
         }
 
         return (

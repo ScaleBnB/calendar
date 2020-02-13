@@ -1,4 +1,5 @@
 var mysql = require("mysql");
+var Promise = require("bluebird");
 
 var connection = mysql.createConnection({
   host: "localhost",
@@ -11,7 +12,6 @@ connection.connect(function(err) {
     console.log("login failure, mysql -u root");
     return;
   }
-
   console.log("DB Connection Success @ db/index.js");
 });
 
@@ -28,10 +28,9 @@ const getMonthAvalibility = function(params, callback) {
 
 }
 
-
+connection.queryPromise = Promise.promisify(connection.query);
 
 module.exports = {
   getMonthAvalibility,
   connection
-
 };

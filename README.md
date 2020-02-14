@@ -2,69 +2,29 @@
 ----
 
 * **URL**: _/reservation/:reservationId_
-    * **Method:**
-      _`GET`_
-    *  **URL Params**
-      **Required:**
-      `reservationId=[integer]`
-      **Optional:**
-      `N/A`
-    * **Data Params**
-      `N/A`
-    * **Notes:** Route to handle retrieving all reservations for a given property 
-
-* **URL**: _/user/:userid/reservation_
-    * **Method:**
-      _`GET`_
-    *  **URL Params**
-      **Required:**
-      `userId=[integer]`
-      **Optional:**
-      `N/A`
-    * **Data Params**
-      `N/A`
-    * **Notes:** Route to handle retrieving all reservations for a given user
+    *  **Description:** Route to handle retrieving a reservation for a given id (in progress)
+    *  **Method:**_`GET`_
+    *  **Route Parameters:**`reservationId=[integer]`
+    *  **Query Parameters:**`false`
+    *  **Body:**`false`
 
 * **URL**: _/reservation_
-    * **Method:**
-      _`POST`_
-    *  **URL Params**
-      **Required:**
-      `N/A`
-      **Optional:**
-      `N/A`
-    * **Data Params**
-      `userId=[integer]`
-      `addressId=[integer]`
-      `startDate=[date]`
-      `endDate=[date]`
-      `guestCount=[integer]`
-    * **Notes:** Route to handle inserting a new reservation
+    *  **Description:** Route to handle inserting a new reservation
+    *  **Method:**_`POST`_
+    *  **Route Parameters:**`false`
+    *  **Query Parameters:**`false`
+    *  **Body:** `userId=[integer]` `addressId=[integer]` `startDate=[date]` `endDate=[date]` `guestCount=[integer]`
 
 * **URL**: _/reservation/:reservationId_
-    * **Method:**
-      _`PUT`_
-    *  **URL Params**
-      **Required:**
-      `reservationId=[integer]`
-      **Optional:**
-      `N/A`
-    * **Data Params**
-      `userId=[integer]`
-      `addressId=[integer]`
-      `startDate=[date]`
-      `endDate=[date]`
-      `guestCount=[integer]`
-    * **Notes:** Route to handle updating a new reservation  
+    *  **Description:** Route to handle updating an already existing reservation 
+    *  **Method:**_`PATCH`_
+    *  **Route Parameters:**`reservationId=[integer]`
+    *  **Query Parameters:**`false`
+    *  **Body:** `userId=[integer]` `addressId=[integer]` `startDate=[date]` `endDate=[date]` `guestCount=[integer]` 
 
 * **URL**: _/reservation/:reservationId_
-    * **Method:**
-      _`DELETE`_
-    *  **URL Params**
-      **Required:**
-      `reservationId=[integer]`
-      **Optional:**
-      `N/A`
-    * **Data Params**
-      `N/A`
-    * **Notes:** Route to handle deleting a new reservation  
+    *  **Description:** Route to handle deleting a new reservation
+    *  **Method:**_`DELETE`_
+    *  **Route Parameters:**`reservationId=[integer]`
+    *  **Query Parameters:**`false`
+    *  **Body:** `false` 

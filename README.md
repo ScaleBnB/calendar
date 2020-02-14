@@ -41,7 +41,7 @@
       `guestCount=[integer]`
     * **Notes:** Route to handle inserting a new reservation
 
-* **URL**: _/reservation/:id_
+* **URL**: _/reservation/:reservationId_
     * **Method:**
       _`PUT`_
     *  **URL Params**
@@ -57,9 +57,9 @@
       `guestCount=[integer]`
     * **Notes:** Route to handle updating a new reservation  
 
-* **URL**: _/reservation/:id_
+* **URL**: _/reservation/:reservationId_
     * **Method:**
-      _`PUT`_
+      _`DELETE`_
     *  **URL Params**
       **Required:**
       `reservationId=[integer]`
@@ -67,4 +67,4 @@
       `N/A`
     * **Data Params**
       `N/A`
-    * **Notes:** Route to handle updating a new reservation  
+    * **Notes:** Route to handle deleting a new reservation  

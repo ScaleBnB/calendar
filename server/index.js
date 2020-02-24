@@ -1,3 +1,4 @@
+require('newrelic');
 const express = require('express');
 const app = express();
 const db = require('./db');
@@ -65,34 +66,26 @@ app.get('/month', (req, res) => {
       - send back all relevant reservation information
       - should be similar to legacy route
   */
-  app.get('/reservation/:reservationId', controller.reservation.get);
-
-  /*
-    Route to handle retrieving all reservations for a given user
-      - get req parameters 
-      - send back all reservations associated with a specific userId
-  */
-  app.get('/user/:userid/reservation', controller.reservation.get);
-
+  app.get('/property/:propertyId/reservation', controller.reservation.get);
 
   /* 
     Route to handle inserting a new reservation
-      - get req parameters (addressId, userId, startDate, endDate, guestCount)
+      - get body parameters (addressId, userId, startDate, endDate, guestCount, numAdults, numChildren, numInfants)
       - send back if insert was successful
   */
-  app.post('/reservation', controller.reservation.post);
+  app.post('/property/:propertyId/reservation', controller.reservation.post);
 
   /*
     Route to handle updating a new reservation
       - get req parameters (addressId, userId, startDate, endDate, guestCount)
       - send back if update was successful
   */
-  app.put('/reservation/:id', controller.reservation.put);
+  app.patch('/property/:propertyId/reservation/:reservationId', controller.reservation.patch);
 
   /*
     Route to handle deleting a new reservation
       - get req parameters (reservationId)
       - send back if delete was successful
   */
-  app.delete('/reservation/:id', controller.reservation.delete);
+  app.delete('/property/:propertyId/reservation/:reservationId', controller.reservation.delete);
 

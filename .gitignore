@@ -1,1 +1,4 @@
 node_modules
+/mySDCKey.pem
+/updatedRoutes.txt
+**/server/db/seed

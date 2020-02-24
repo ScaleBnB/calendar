@@ -13,7 +13,7 @@
   *  **Method:**_`POST`_
   *  **Route Parameters:** `propertyId=[integer]`
   *  **Query Parameters:** `false`
-  *  **Body:** `userId=[integer]` `addressId=[integer]` `startDate=[date]` `endDate=[date]` `guestCount=[integer]`
+  *  **Body:** `userId=[integer]` `addressId=[integer]` `startDate=[date]` `endDate=[date]` `guestCount=[integer]` `numadult=[integer]` `numchildren=[integer]` `numinfants=[integer]`
 
 * **URL**: _/property/:propertyId/reservation/:reservationId_
   *  **Description:** Route to handle updating an already existing reservation for a specific property

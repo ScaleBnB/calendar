@@ -1,0 +1,49 @@
+Routes
+1/	/GET     /property/:propertyId/reservation 
+2/  /POST    /property/:propertyId/reservation
+3/  /PATCH   /property/:propertyId/reservation/:reservationId
+4/  /DELETE  /property/:propertyId/reservation/:reservationId
+
+Route Meaning
+1/ Get all reservations associated with a specific property 
+2/ Insert a new reservation for a specific property 
+3/ Update a reservation for a specific property and given reservationId
+4/ Delete a reservation for a specific property and given reservationId
+
+------------------------------ MONGO ------------------------------------------
+// Insert a new property 
+db.property.insertOne({ "_pid" : 10000000, "test": 1, "ownerId" : 218371, "address" : "'58962 Rohan Key North Katarina New Jersey 02275'", "baseRate" : 377.44, "reviewScore" : 4.58, "reviewCount" : 79, "minStayLength" : 14, "cleaningFee" : 7, "serviceFee" : 9, "maxAdults" : 1, "reservations" : [ { "_rid" : 0, "_uid" : 340501, "startDate" : "Tue Feb 18 2020", "endDate" : "Sun Mar 01 2020", "numAdult" : 1, "numChildren" : 1, "numInfants" : 1 }, { "_rid" : 1, "_uid" : 305824, "startDate" : "Wed Feb 19 2020", "endDate" : "Tue Mar 03 2020", "numAdult" : 2, "numChildren" : 1, "numInfants" : 1 }]})
+
+// Get all reservations for a property (Route #1) 
+db.property.find({ _pid: 75000 }, { reservations: 1 })
+
+// Insert a reservation for a property (Route #2)
+db.property.update({ _pid: 10000000}, {$push: { reservations: {"_rid" : 2, "_uid" : 305824, "startDate" : "Wed Feb 25 2020", "endDate" : "Tue Mar 01 2020", "numAdult" : 1, "numChildren" : 1, "numInfants" : 1 }}})
+
+// Update a reservation (start date) for a property (specify res id) (Route #3)
+db.property.update({ _pid: 10000000 , "reservations._rid":1}, {$set: {"reservations.$.startDate": "Wed Feb 28 2020"}})
+
+myexp.update({ _pid: 10000000 , "reservations._rid":1}, {$set: {"reservations.$.startDate": "Wed Feb 28 2020"}})
+
+// Delete a reservation for a property (specify res id) (Route #4)
+db.property.update({ _pid:10000000 }, { $pull: { reservations: { _rid: 1 }}})
+
+--------------------------------------------------------------------------------
+
+------------------------------ PostgreSQL------------------------------------------
+// Insert a new property
+
+// Get all reservations for a property
+explain analyze select * from reservation where pid = 7500000;
+
+// Insert a reservation for a property
+explain analyze insert into reservation(uid, pid, startdate, enddate, numadult, numchildren, numinfants) VALUES (750000, 8500000, 'Wed Feb 19 2020', 'Tue Mar 03 2020', 2, 1, 1);
+
+// Update a reservation (start date) for a property 
+explain analyze update reservation set startdate='Thu Sat 19 2020' where id=7500000;
+
+// Delete a reservation for a property 
+
+
+
+--------------------------------------------------------------------------------
